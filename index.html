@@ -7,7 +7,484 @@
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Expires" content="0" />
 <title>智捷数码科技</title>
-<link rel="stylesheet" href="./style.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;outline:none;}
+
+body.day{background:#f5f5f5;color:#222;}
+body.night{background:#2a2f3a;color:#e8e8e8;}
+body.day .container{background:#ffffff;box-shadow:0 4px 16px rgba(0,0,0,0.08);}
+body.night .container{background:#3a4050;box-shadow:0 4px 16px rgba(0,0,0,0.3);}
+body.night .business{background:#454c5e;}
+body.night .business-text p{color:#d0d0d0;}
+body.night .link-text{background:#4a6a8a;color:#a8d0ff;}
+body.night .copy-btn{background:#4a5268;color:#a8d0ff;border-color:#5a6a8a;}
+body.night .edit-btn{background:#4a5268;color:#a8d0ff;border-color:#5a6a8a;}
+body.night .bottom-tip{color:#bbb;}
+body.night .copyright{color:#999;}
+body.night .switch-btn{border-color:#5a7aaa;}
+body.night .switch-btn:not(.active){background:#4a5268;color:#a8d0ff;}
+body.night h1{color:#5aa0ff;}
+body.night h3 a{color:#5aa0ff;}
+body.night .fold-summary{color:#e6e6e6;}
+body.night .modal-content{background:#3a4050;color:#e8e8e8;}
+body.night .edit-input,body.night .edit-textarea{background:#2a2f3a;color:#e8e8e8;border-color:#5a6a8a;}
+
+.ripple{
+  position:fixed;
+  top:23px;
+  right:24px;
+  width:40px;
+  height:40px;
+  border-radius:50%;
+  z-index:9998;
+  pointer-events:none;
+  transform:scale(0);
+  animation:rippleEffect .55s ease forwards;
+}
+body.night .ripple{background:#ffffff;}
+body.day .ripple{background:#2a2f3a;}
+
+@keyframes rippleEffect{
+  0%{transform:scale(0);opacity:.9;}
+  60%{transform:scale(28);opacity:.5;}
+  100%{transform:scale(45);opacity:0;}
+}
+
+.top-bar{
+  position:fixed;
+  top:12px;
+  right:16px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  z-index:9999;
+}
+#toggleBtn{
+  background:transparent;
+  border:none;
+  cursor:pointer;
+  padding:6px;
+  border-radius:50%;
+  width:34px;
+  height:34px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:background .25s ease, transform .25s ease;
+  outline:none;
+}
+#toggleBtn:hover{background:rgba(0,119,221,0.12);}
+#toggleBtn:active{transform:scale(0.92);}
+.theme-icon{
+  font-size:16px;
+  line-height:1;
+  display:inline-block;
+  transition:transform .45s ease, opacity .3s ease;
+}
+#toggleBtn:hover .theme-icon{transform:rotate(180deg);}
+.date-text{
+  font-size:14px;
+  font-weight:bold;
+  white-space:nowrap;
+  background:rgba(255,255,255,0.75);
+  padding:5px 11px;
+  border-radius:999px;
+  transition:background .3s ease, color .3s ease;
+}
+body.night .date-text{
+  background:rgba(255,255,255,0.14);
+  color:#e6e6e6;
+}
+
+body{
+  font-family:system-ui, sans-serif;
+  padding:40px 20px;
+  transition:background .3s,color .3s;
+}
+.container{
+  margin:0 auto;
+  padding:36px 24px;
+  border-radius:20px;
+  text-align:center;
+  max-width:520px;
+  transition:background .3s;
+}
+.container.desktop-view{max-width:960px;}
+h1{
+  font-size:38px;
+  color:#0077dd;
+  margin-bottom:12px;
+  font-weight:bold;
+}
+h3{
+  font-size:28px;
+  margin-bottom:28px;
+}
+h3 a{
+  color:#0077dd;
+  text-decoration:none;
+}
+.business{
+  background:#f0f7ff;
+  padding:18px 16px;
+  border-radius:12px;
+  margin:0 auto 30px;
+  transition:background .3s;
+}
+.business strong{
+  color:#c82423;
+  font-size:19px;
+}
+
+.fold-wrap{
+  text-align:left;
+  margin:14px 0;
+}
+details.fold-item{
+  margin:12px 0;
+}
+.fold-item summary.fold-summary{
+  list-style:none;
+  cursor:pointer;
+  font-size:17px;
+  padding-left:28px;
+  position:relative;
+  color:#222;
+  font-weight:500;
+  line-height:1.5;
+}
+.fold-item summary.fold-summary::-webkit-details-marker{display:none;}
+
+.fold-item summary.fold-summary::before{
+  content:"▶";
+  position:absolute;
+  left:0;
+  top:50%;
+  transform:translateY(-50%);
+  font-size:14px;
+  font-weight:bold;
+  color:#0077dd;
+  transition:transform 0.22s ease;
+}
+.fold-item[open] summary.fold-summary::before{
+  content:"▼";
+}
+
+.fold-content{
+  padding:10px 0 4px 28px;
+}
+
+.link-row{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  flex-wrap:wrap;
+  margin:8px 0;
+}
+.link-text{
+  flex:1;
+  word-break:break-all;
+  color:#0077dd;
+  user-select:text;
+  cursor:pointer;
+  text-decoration:underline;
+  background:#e1f0ff;
+  padding:6px 12px;
+  border-radius:999px;
+  position:relative;
+  overflow:hidden;
+  z-index:1;
+  outline:none !important;
+  transition: background .22s ease, color .22s ease, transform .22s ease;
+  will-change: transform, background-color;
+}
+.link-text:focus{outline:none;}
+.link-text.clicked{
+  background:#ff3333 !important;
+  color:#ffffff !important;
+  transform:scale(0.96);
+}
+body.night .link-text.clicked{
+  background:#ff3333 !important;
+  color:#ffffff !important;
+}
+.link-text::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:12px;
+  height:12px;
+  border-radius:50%;
+  background:rgba(255,255,255,0.45);
+  transform:translate(-50%,-50%) scale(0);
+  pointer-events:none;
+  will-change: transform,opacity;
+}
+.link-text.clicked::after{
+  animation:pillRipple 0.42s ease-out forwards;
+}
+@keyframes pillRipple{
+  0%{transform:translate(-50%,-50%) scale(0);opacity:0.8;}
+  100%{transform:translate(-50%,-50%) scale(16);opacity:0;}
+}
+.copy-btn,
+.edit-btn{
+  padding:4px 10px;
+  font-size:14px;
+  border:1px solid #0077dd;
+  border-radius:6px;
+  background:#fff;
+  color:#0077dd;
+  cursor:pointer;
+  white-space:nowrap;
+  outline:none;
+}
+.copy-btn:active,
+.edit-btn:active{
+  background:#0077dd;
+  color:#fff;
+}
+
+.link-note{
+  width:100%;
+  font-size:14px;
+  color:#555;
+  background:#f7fbff;
+  border:1px dashed #b9dcff;
+  border-radius:10px;
+  padding:8px 10px;
+  margin-top:6px;
+  line-height:1.6;
+}
+body.night .link-note{
+  background:#343a48;
+  color:#cfd6e4;
+  border-color:#5a6a8a;
+}
+
+/*倒计时悬浮提示框 */
+.countdown-tip{
+  position:fixed;
+  right:18px;
+  bottom:22px;
+  z-index:9997;
+  background:#0077dd;
+  color:#ffffff;
+  padding:8px 12px;
+  border-radius:999px;
+  font-size:14px;
+  box-shadow:0 3px 12px rgba(0,0,0,0.18);
+  display:none;
+  gap:8px;
+  align-items:center;
+}
+.count-pause-btn{
+  border:1px solid #fff;
+  background:transparent;
+  color:#fff;
+  border-radius:6px;
+  padding:2px 7px;
+  font-size:12px;
+  cursor:pointer;
+}
+body.night .countdown-tip{
+  background:#1f4b82;
+}
+
+.switch-bar{
+  margin-top:30px;
+  padding-top:24px;
+  border-top:1px solid #eaeaea;
+  display:flex;
+  justify-content:center;
+  gap:12px;
+}
+.switch-btn{
+  flex:1;
+  max-width:180px;
+  padding:12px 10px;
+  border-radius:10px;
+  text-decoration:none;
+  font-size:17px;
+  font-weight:bold;
+  border:1px solid #0077dd;
+  outline:none;
+}
+.switch-btn.active{
+  background:#0077dd;
+  color:#fff;
+}
+.switch-btn:not(.active){
+  background:#fff;
+  color:#0077dd;
+}
+.business-row{
+  display:flex;
+  gap:20px;
+  align-items:center;
+  justify-content:space-between;
+  text-align:left;
+}
+.business-img{
+  width:110px;
+  height:110px;
+  border-radius:12px;
+  object-fit:cover;
+  flex-shrink:0;
+  cursor:zoom-in;
+}
+.business-text{
+  flex:1;
+  min-width:0;
+}
+.business-text strong{
+  display:block;
+  color:#c82423;
+  font-size:19px;
+  margin-bottom:6px;
+}
+.business-text p{
+  font-size:16px;
+  color:#222;
+  line-height:1.7;
+  margin:0;
+}
+.bottom-img-wrap{
+  margin-top:30px;
+  padding-top:20px;
+  border-top:1px solid #eaeaea;
+  display:flex;
+  gap:16px;
+  justify-content:center;
+}
+.bottom-img-wrap img{
+  width:45%;
+  max-width:320px;
+  border-radius:12px;
+  object-fit:cover;
+  cursor:zoom-in;
+}
+.bottom-tip{
+  margin-top:12px;
+  font-size:14px;
+  color:#444;
+  text-align:center;
+  line-height:1.6;
+}
+.copyright{
+  margin-top:20px;
+  font-size:14px;
+  color:#666;
+  text-align:center;
+}
+@media (max-width: 480px){
+  .business-row{
+    flex-direction:column;
+    text-align:center;
+  }
+  .business-img{width:90px;height:90px;}
+  .bottom-img-wrap{flex-direction:column;align-items:center;}
+  .bottom-img-wrap img{width:90%;}
+  .date-text{font-size:13px;}
+}
+.modal{
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.9);
+  z-index:9999;
+  justify-content:center;
+  align-items:center;
+}
+.modal-img{
+  max-width:90%;
+  max-height:90vh;
+}
+.modal-close{
+  position:absolute;
+  top:20px;
+  right:35px;
+  color:#fff;
+  font-size:40px;
+  cursor:pointer;
+}
+
+.edit-modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.55);
+  z-index:10000;
+  justify-content:center;
+  align-items:center;
+  padding:20px;
+}
+.edit-modal.show{
+  display:flex;
+}
+.modal-content{
+  background:#fff;
+  border-radius:16px;
+  width:100%;
+  max-width:420px;
+  padding:24px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
+.modal-content h4{
+  margin-bottom:14px;
+  font-size:18px;
+  color:#0077dd;
+}
+.edit-label{
+  display:block;
+  margin:10px 0 6px;
+  font-size:14px;
+  color:#444;
+  font-weight:600;
+}
+.edit-input,
+.edit-textarea{
+  width:100%;
+  padding:10px 12px;
+  border:1px solid #bcd6f0;
+  border-radius:10px;
+  font-size:15px;
+  font-family:inherit;
+  background:#fafcff;
+  color:#222;
+  box-sizing:border-box;
+}
+.edit-textarea{
+  min-height:90px;
+  resize:vertical;
+}
+.edit-buttons{
+  display:flex;
+  gap:10px;
+  margin-top:18px;
+}
+.edit-buttons button{
+  flex:1;
+  padding:10px;
+  border-radius:10px;
+  border:none;
+  cursor:pointer;
+  font-size:15px;
+  font-weight:bold;
+}
+.btn-cancel{
+  background:#eef2f7;
+  color:#444;
+}
+.btn-save{
+  background:#0077dd;
+  color:#fff;
+}
+</style>
 </head>
 <body class="day">
 
@@ -250,6 +727,268 @@
   </div>
 </div>
 
-<script src="./main.js"></script>
+<script>
+const body = document.body;
+const toggleBtn = document.getElementById('toggleBtn');
+const dateBox = document.getElementById('dateBox');
+const themeIcon = document.getElementById('themeIcon');
+const ripple = document.getElementById('ripple');
+const countTip = document.getElementById('countTip');
+const countText = document.getElementById('countText');
+const pauseBtn = document.getElementById('pauseBtn');
+
+// 自动关闭总时长：10秒
+const AUTO_CLOSE_DELAY = 10000;
+let autoCloseTimer = null;
+let activeOpenItem = null;
+let countDownTimer = null;
+let remainSec = 10;
+let isPaused = false;
+
+function hideCountTip(){
+    countTip.style.display = 'none';
+}
+function showCountTip(sec){
+    countText.innerText = `⏱ 剩余：${sec}秒`;
+    countTip.style.display = 'flex';
+}
+
+function resetAutoTimer(item){
+    if(autoCloseTimer) clearTimeout(autoCloseTimer);
+    if(countDownTimer) clearInterval(countDownTimer);
+    activeOpenItem = item;
+    remainSec = 10;
+    isPaused = false;
+    pauseBtn.innerText = "暂停";
+    showCountTip(remainSec);
+
+    countDownTimer = setInterval(()=>{
+        if(isPaused) return;
+        remainSec -=1;
+        showCountTip(remainSec);
+        if(remainSec <=0){
+            clearInterval(countDownTimer);
+        }
+    },1000);
+
+    autoCloseTimer = setTimeout(()=>{
+        if(isPaused) return;
+        if(activeOpenItem){
+            activeOpenItem.open = false;
+        }
+        hideCountTip();
+        if(countDownTimer) clearInterval(countDownTimer);
+        autoCloseTimer = null;
+        activeOpenItem = null;
+        isPaused = false;
+    },AUTO_CLOSE_DELAY);
+}
+
+function clearAutoTimer(){
+    if(autoCloseTimer) clearTimeout(autoCloseTimer);
+    if(countDownTimer) clearInterval(countDownTimer);
+    autoCloseTimer = null;
+    activeOpenItem = null;
+    isPaused = false;
+    hideCountTip();
+}
+
+pauseBtn.onclick = ()=>{
+    isPaused = !isPaused;
+    if(isPaused){
+        pauseBtn.innerText = "恢复计时";
+        countText.innerText = "⏸ 已暂停，永久保持展开";
+    }else{
+        pauseBtn.innerText = "暂停";
+        remainSec =10;
+        showCountTip(remainSec);
+    }
+}
+
+function getWeek(){
+  const w = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];
+  const d = new Date();
+  return `${d.getMonth()+1}月${d.getDate()}日 ${w[d.getDay()]}`;
+}
+dateBox.innerText = getWeek();
+
+function createRipple(){
+  ripple.classList.remove('ripple');
+  void ripple.offsetWidth;
+  ripple.classList.add('ripple');
+}
+
+function setTheme(mode){
+  createRipple();
+  themeIcon.style.transform = 'rotate(0deg) scale(0.6)';
+  themeIcon.style.opacity = '0';
+  setTimeout(()=>{
+    if(mode === 'night'){
+      body.classList.remove('day');
+      body.classList.add('night');
+      themeIcon.textContent = '🌙';
+    }else{
+      body.classList.remove('night');
+      body.classList.add('day');
+      themeIcon.textContent = '☀️';
+    }
+    themeIcon.style.transform = 'rotate(180deg) scale(1)';
+    themeIcon.style.opacity = '1';
+  },220);
+}
+
+toggleBtn.onclick = ()=>{
+  if(body.classList.contains('day')){
+    setTheme('night');
+  }else{
+    setTheme('day');
+  }
+}
+
+//监听折叠展开收起
+document.querySelectorAll('.fold-item').forEach(item=>{
+    item.addEventListener('toggle',()=>{
+        if(item.open){
+            resetAutoTimer(item);
+        }else{
+            clearAutoTimer();
+        }
+    })
+})
+
+//点击链接、复制、修改，只有非暂停状态重置倒计时
+document.querySelectorAll('.link-text,.copy-btn,.edit-btn').forEach(el=>{
+    el.addEventListener('click',()=>{
+        if(activeOpenItem && !isPaused){
+            resetAutoTimer(activeOpenItem);
+        }
+    })
+})
+
+document.querySelectorAll('.link-text').forEach(el=>{
+  el.addEventListener('click',function(e){
+    e.preventDefault();
+    const url = this.dataset.url;
+    const link = this;
+    if(link.classList.contains('clicked')) return;
+    link.classList.add('clicked');
+    requestAnimationFrame(()=>{
+      requestAnimationFrame(()=>{
+        window.open(url,'_blank','noopener,noreferrer');
+      })
+    });
+    setTimeout(()=>{
+      link.classList.remove('clicked');
+    },220);
+  })
+})
+
+const params = new URLSearchParams(location.search);
+const view = params.get('view');
+const box = document.getElementById('mainBox');
+const btnM = document.getElementById('btnMobile');
+const btnD = document.getElementById('btnDesktop');
+
+if(view === 'desktop'){
+  box.classList.add('desktop-view');
+  btnD.classList.add('active');
+}else{
+  btnM.classList.add('active');
+}
+
+const zoomImages = document.querySelectorAll('[data-big]');
+const modal = document.getElementById('imgModal');
+const bigImg = document.getElementById('bigImg');
+const closeBtn = document.querySelector('.modal-close');
+
+zoomImages.forEach(img=>{
+  img.addEventListener('click',()=>{
+    bigImg.src = img.dataset.big;
+    modal.style.display = 'flex';
+    document.body.style.overflow='hidden';
+  })
+})
+
+closeBtn.addEventListener('click',()=>{
+  modal.style.display='none';
+  document.body.style.overflow='';
+});
+
+modal.addEventListener('click',(e)=>{
+  if(e.target === modal){
+    modal.style.display='none';
+    document.body.style.overflow='';
+  }
+});
+
+document.querySelectorAll('.copy-btn').forEach(btn=>{
+  btn.addEventListener('click',function(){
+    const url = this.previousElementSibling.dataset.url;
+    const ta = document.createElement('textarea');
+    ta.value = url;
+    ta.style.position='fixed';
+    ta.style.left='-9999px';
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    const oldText = btn.innerText;
+    btn.innerText='已复制';
+    setTimeout(()=>{btn.innerText=oldText;},1200);
+  })
+})
+
+const editModal = document.getElementById('editModal');
+const editTitle = document.getElementById('editTitle');
+const editUrl = document.getElementById('editUrl');
+const editNote = document.getElementById('editNote');
+const btnCancel = document.getElementById('btnCancel');
+const btnSave = document.getElementById('btnSave');
+let currentEditId = null;
+
+document.querySelectorAll('.edit-btn').forEach(btn=>{
+  btn.addEventListener('click',function(){
+    currentEditId = this.getAttribute('data-edit');
+    const item = this.closest('.fold-item');
+    const summary = item.querySelector('.fold-summary');
+    const linkText = item.querySelector('.link-text');
+    const note = item.querySelector('.link-note');
+
+    editTitle.value = summary.textContent.trim();
+    editUrl.value = linkText.dataset.url;
+    editNote.value = note ? note.textContent.trim() : '';
+
+    editModal.classList.add('show');
+  })
+})
+
+btnCancel.addEventListener('click',()=>{
+  editModal.classList.remove('show');
+  currentEditId = null;
+})
+
+btnSave.addEventListener('click',()=>{
+  if(!currentEditId) return;
+  const item = document.querySelector(`[data-edit="${currentEditId}"]`).closest('.fold-item');
+  const summary = item.querySelector('.fold-summary');
+  const linkText = item.querySelector('.link-text');
+  const note = item.querySelector('.link-note');
+
+  if(editTitle.value.trim()){
+    summary.textContent = editTitle.value.trim();
+  }
+  if(editUrl.value.trim()){
+    linkText.dataset.url = editUrl.value.trim();
+    linkText.textContent = editUrl.value.trim();
+  }
+  if(note){
+    note.textContent = editNote.value.trim();
+  }
+
+  editModal.classList.remove('show');
+  currentEditId = null;
+})
+</script>
+
 </body>
 </html>
