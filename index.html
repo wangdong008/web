@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<title>智捷数码科技</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body class="day">
+
+<!-- 右上角：日期 + 昼夜切换 -->
+<div class="top-bar">
+  <div class="date-text" id="dateBox"></div>
+  <button id="toggleBtn" title="切换昼夜">
+    <span class="theme-icon" id="themeIcon">☀️</span>
+    <span class="ripple" id="ripple"></span>
+  </button>
+</div>
+
+<div class="container" id="mainBox">
+  <h1>智捷数码科技</h1>
+  <h3><span style="font-size:16px;vertical-align:middle;">📞</span> <a href="tel:15518707076">155 1870 7076</a></h3>
+
+  <!-- 公告栏 -->
+  <div class="notice-box">
+    📢 公告：虞城、商丘周边可上门服务｜弱电安防监控、综合布线调试；导航站源定期更新，有问题电话联系。
+  </div>
+
+  <!-- 主营业务 -->
+  <div class="business">
+    <div class="business-row">
+      <img src="https://cf.wangdong.cc.cd/1.jpg" alt="主营业务" class="business-img" data-big="https://cf.wangdong.cc.cd/1.jpg">
+      <div class="business-text">
+        <strong>✅ 主营业务：</strong>
+        <p>弱电安防·综合布线｜无线组网·智能家居｜手机电脑·通讯终端｜收银软件·办公设备｜联通办卡·广电办号｜广播音响设备</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 服务信息卡片 -->
+  <div class="service-info">
+    <strong>🕒 营业时间：</strong>周一至周日 08:30‑21:00<br>
+    <strong>📍 服务区域：</strong>虞城县全域、商丘市区及周边乡镇，支持上门勘测施工<br>
+    <div style="margin-top:10px;text-align:center;">
+      <button class="btn-small" id="openWechatBtn">💬 复制微信号</button>
+      <a class="btn-small" target="_blank" href="https://uri.amap.com/marker?position=115.871,34.412&name=智捷数码科技商行">🗺 高德导航到店</a>
+      <button class="btn-small" id="downloadVcfBtn">📇 保存联系人</button>
+      <button class="btn-small" id="sharePageBtn">🔗 分享页面</button>
+    </div>
+    <div style="margin-top:8px;font-size:13px;opacity:0.8;">
+      本地访问次数：<span id="visitCount">0</span>
+    </div>
+  </div>
+
+  <ul>
+    <!-- 一帆风顺：永久显示，不折叠 -->
+    <li>
+      <span class="label">🔗 一帆风顺（导航站）：</span>
+      <div class="link-row">
+        <span class="link-text" data-url="https://gr.wangdong.cc.cd">https://gr.wangdong.cc.cd</span>
+        <button class="copy-btn">复制</button>
+      </div>
+    </li>
+
+    <!-- 折叠开关 -->
+    <button class="collapse-toggle-btn" id="collapseToggle">📂 展开全部链接</button>
+
+    <!-- 折叠区域：二龙戏珠 ~ 个人博客 -->
+    <div class="link-collapse-wrap" id="linkCollapseBox">
+      <li>
+        <span class="label">🔗 二龙戏珠（导航站）：</span>
+        <div class="link-row">
+          <span class="link-text" data-url="https://wddh.wangdong.cc.cd">https://wddh.wangdong.cc.cd</span>
+          <button class="copy-btn">复制</button>
+        </div>
+      </li>
+      <li>
+        <span class="label">🔗 三头六臂（导航站）：</span>
+        <div class="link-row">
+          <span class="link-text" data-url="https://wdio.wangdong.cc.cd">https://wdio.wangdong.cc.cd</span>
+          <button class="copy-btn">复制</button>
+        </div>
+      </li>
+      <li>
+        <span class="label">🔗 四通八达（导航站）：</span>
+        <div class="link-row">
+          <span class="link-text" data-url="https://dz.wangdong.cc.cd">https://dz.wangdong.cc.cd</span>
+          <button class="copy-btn">复制</button>
+        </div>
+      </li>
+      <li>
+        <span class="label">📺 五颜六色（直播源酷9空壳使用）：</span>
+        <div class="link-row">
+          <span class="link-text" data-url="https://wd.xhihi.art/test.txt">https://wd.xhihi.art/test.txt</span>
+          <button class="copy-btn">复制</button>
+        </div>
+      </li>
+      <li>
+        <span class="label">💾 六六大顺（个人CF网盘）：</span>
+        <div class="link-row">
+          <span class="link-text" data-url="https://cf.wangdong.cc.cd">https://cf.wangdong.cc.cd</span>
+          <button class="copy-btn">复制</button>
+        </div>
+      </li>
+      <li>
+        <span class="label">📺 七零八落（直播央卫视）：</span>
+        <div class="link-row">
+          <span class="link-text" data-url="https://cf.wangdong.cc.cd/zby.txt">https://cf.wangdong.cc.cd/zby.txt</span>
+          <button class="copy-btn">复制</button>
+        </div>
+      </li>
+      <li>
+        <span class="label">🛠️ 八仙过海（腾讯软件下载无广告）：</span>
+        <div class="link-row">
+          <span class="link-text" data-url="https://soft.qq.com/">https://soft.qq.com/</span>
+          <button class="copy-btn">复制</button>
+        </div>
+      </li>
+      <li>
+        <span class="label">📶 九九归一（网络测速）：</span>
+        <div class="link-row">
+          <span class="link-text" data-url="https://www.speedtest.cn/">https://www.speedtest.cn/</span>
+          <button class="copy-btn">复制</button>
+        </div>
+      </li>
+      <li>
+        <span class="label">🖥 十全十美（图吧工具箱查电脑配置）：</span>
+        <div class="link-row">
+          <span class="link-text" data-url="https://www.tbtool.cn/">https://www.tbtool.cn/</span>
+          <button class="copy-btn">复制</button>
+        </div>
+      </li>
+      <li>
+        <span class="label">☁ CF网盘每日10G（游客Public）：</span>
+        <div class="link-row">
+          <span class="link-text" data-url="https://wp.wangdong.cc.cd/">https://wp.wangdong.cc.cd/</span>
+          <button class="copy-btn">复制</button>
+        </div>
+      </li>
+      <li>
+        <span class="label">📤 CF网盘图片（图床）：</span>
+        <div class="link-row">
+          <span class="link-text" data-url="https://tupian.wangdong.cc.cd/">https://tupian.wangdong.cc.cd/</span>
+          <button class="copy-btn">复制</button>
+        </div>
+      </li>
+      <li>
+        <span class="label">📁 IT工具：</span>
+        <div class="link-row">
+          <span class="link-text" data-url="https://it.wangdong.cc.cd/">https://it.wangdong.cc.cd/</span>
+          <button class="copy-btn">复制</button>
+        </div>
+      </li>
+      <li>
+        <span class="label">🌐 个人博客（网页）：</span>
+        <div class="link-row">
+          <span class="link-text" data-url="https://bk.wangdong.cc.cd/">https://bk.wangdong.cc.cd/</span>
+          <button class="copy-btn">复制</button>
+        </div>
+      </li>
+    </div>
+  </ul>
+
+  <!-- 底部图片 -->
+  <div class="bottom-img-wrap">
+    <img src="https://cf.wangdong.cc.cd/2.jpg" alt="扫码下单" data-big="https://cf.wangdong.cc.cd/2.jpg">
+    <img src="https://cf.wangdong.cc.cd/3.jpg" alt="收款码" data-big="https://cf.wangdong.cc.cd/3.jpg">
+  </div>
+  <div class="bottom-tip">此二维码在微信扫一扫可查看相应产品和价格，微信小程序，可保存图片付款。可分享本页面二维码发给客户。</div>
+
+  <!-- 视图切换 -->
+  <div class="switch-bar">
+    <a href="?view=mobile" class="switch-btn" id="btnMobile">📱 手机版</a>
+    <a href="?view=desktop" class="switch-btn" id="btnDesktop">💻 电脑版</a>
+  </div>
+
+  <div class="copyright">© 2026 智捷数码科技 版权所有｜虞城县智捷数码科技商行</div>
+</div>
+
+<!-- 图片放大弹窗 -->
+<div class="modal" id="imgModal">
+  <span class="modal-close">&times;</span>
+  <img class="modal-img" id="bigImg">
+</div>
+
+<!-- 微信弹窗 -->
+<div class="wechat-modal" id="wechatModal">
+  <div class="wechat-inner">
+    <h4>智捷数码 微信号</h4>
+    <p style="margin:14px 0;font-size:20px;font-weight:bold;" id="wxText">ZJSM202601</p>
+    <button class="wechat-close" id="copyWxBtn">复制微信号</button>
+    <br>
+    <button class="wechat-close" id="closeWxModal">关闭</button>
+  </div>
+</div>
+
+<!-- 全局 Toast -->
+<div class="toast" id="toastBox"></div>
+
+<script src="./main.js"></script>
+</body>
+</html>
