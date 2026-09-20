@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<title>智捷数码科技</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="day">
+<div class="global-toggle-wrap">
+  <button class="global-toggle" id="allToggle">▶ 全部展开</button>
+</div>
+
+<div class="top-bar">
+  <button class="theme-toggle" id="themeBtn">☀️</button>
+  <button class="theme-toggle" id="shareBtn" title="分享">📤</button>
+</div>
+<div class="count-box" id="countBox">
+  <div>剩余 <span id="sec">10</span>s</div>
+  <button id="pauseBtn">暂停</button>
+</div>
+<div class="container" id="wrap">
+<h1>智捷数码科技</h1>
+<div class="tel-line"><a href="tel:15518707076">📞 155 1870 7076</a></div>
+<div class="info-row">
+  <div class="clock-tag" id="clockTag"></div>
+  <div class="weather-tag" id="weatherTag">定位中…</div>
+</div>
+<div class="business">
+  <div class="business-row">
+    <img src="https://cf.wangdong.cc.cd/1.jpg" alt="业务" class="business-img" data-big="https://cf.wangdong.cc.cd/1.jpg">
+    <div class="business-text">
+      <strong>✅ 主营业务</strong>
+      <p>弱电安防·综合布线｜无线组网·智能家居｜手机电脑｜收银软件｜办公设备｜广电联通｜广播音响</p>
+    </div>
+  </div>
+</div>
+<div class="search-bar">
+  <input class="search-input" id="searchInput" type="text" placeholder="搜索本站链接，回车走百度一下">
+  <button class="search-btn" id="baiduBtn">百度</button>
+</div>
+<div id="linkList">
+<div class="link-item" data-id="e0">
+  <div class="item-wrap">
+    <div class="item-head">
+      <button class="expand-btn">▶</button>
+      <div class="label-text">一帆风顺（导航站）</div>
+    </div>
+    <div class="url-text" data-url="https://gr.wangdong.cc.cd">https://gr.wangdong.cc.cd</div>
+    <div class="note-show-box"></div>
+    <div class="icon-bar">
+      <button class="icon-btn btn-copy" title="复制链接">📋</button>
+      <button class="icon-btn btn-edit" title="修改标题/网址/简介">✏️</button>
+    </div>
+    <div class="edit-panel">
+      <label>显示文字</label>
+      <input class="i-label">
+      <label>链接地址</label>
+      <input class="i-url">
+      <label>简介 / 备注说明</label>
+      <textarea class="i-note" placeholder="填写链接用途、备注说明"></textarea>
+      <button class="save-btn">保存</button>
+      <div class="tip-save">✅已保存</div>
+    </div>
+  </div>
+</div>
+<div class="link-item" data-id="e1">
+  <div class="item-wrap">
+    <div class="item-head">
+      <button class="expand-btn">▶</button>
+      <div class="label-text">二龙戏珠（导航站）</div>
+    </div>
+    <div class="url-text" data-url="https://wddh.wangdong.cc.cd">https://wddh.wangdong.cc.cd</div>
+    <div class="note-show-box"></div>
+    <div class="icon-bar">
+      <button class="icon-btn btn-copy" title="复制链接">📋</button>
+      <button class="icon-btn btn-edit" title="修改标题/网址/简介">✏️</button>
+    </div>
+    <div class="edit-panel">
+      <label>显示文字</label>
+      <input class="i-label">
+      <label>链接地址</label>
+      <input class="i-url">
+      <label>简介 / 备注说明</label>
+      <textarea class="i-note" placeholder="填写链接用途、备注说明"></textarea>
+      <button class="save-btn">保存</button>
+      <div class="tip-save">✅已保存</div>
+    </div>
+  </div>
+</div>
+<div class="link-item" data-id="e2">
+  <div class="item-wrap">
+    <div class="item-head">
+      <button class="expand-btn">▶</button>
+      <div class="label-text">三头六臂（导航站）</div>
+    </div>
+    <div class="url-text" data-url="https://wdio.wangdong.cc.cd">https://wdio.wangdong.cc.cd</div>
+    <div class="note-show-box"></div>
+    <div class="icon-bar">
+      <button class="icon-btn btn-copy" title="复制链接">📋</button>
+      <button class="icon-btn btn-edit" title="修改标题/网址/简介">✏️</button>
+    </div>
+    <div class="edit-panel">
+      <label>显示文字</label>
+      <input class="i-label">
+      <label>链接地址</label>
+      <input class="i-url">
+      <label>简介 / 备注说明</label>
+      <textarea class="i-note" placeholder="填写链接用途、备注说明"></textarea>
+      <button class="save-btn">保存</button>
+      <div class="tip-save">✅已保存</div>
+    </div>
+  </div>
+</div>
+<div class="link-item" data-id="e3">
+  <div class="item-wrap">
+    <div class="item-head">
+      <button class="expand-btn">▶</button>
+      <div class="label-text">四通八达（导航站）</div>
+    </div>
+    <div class="url-text" data-url="https://dz.wangdong.cc.cd">https://dz.wangdong.cc.cd</div>
+    <div class="note-show-box"></div>
+    <div class="icon-bar">
+      <button class="icon-btn btn-copy" title="复制链接">📋</button>
+      <button class="icon-btn btn-edit" title="修改标题/网址/简介">✏️</button>
+    </div>
+    <div class="edit-panel">
+      <label>显示文字</label>
+      <input class="i-label">
+      <label>链接地址</label>
+      <input class="i-url">
+      <label>简介 / 备注说明</label>
+      <textarea class="i-note" placeholder="填写链接用途、备注说明"></textarea>
+      <button class="save-btn">保存</button>
+      <div class="tip-save">✅已保存</div>
+    </div>
+  </div>
+</div>
+<div class="link-item" data-id="e4">
+  <div class="item-wrap">
+    <div class="item-head">
+      <button class="expand-btn">▶</button>
+      <div class="label-text">五颜六色（直播源酷9空壳使用）</div>
+    </div>
+    <div class="url-text" data-url="https://wd.xhihi.art/test.txt">https://wd.xhihi.art/test.txt</div>
+    <div class="note-show-box"></div>
+    <div class="icon-bar">
+      <button class="icon-btn btn-copy" title="复制链接">📋</button>
+      <button class="icon-btn btn-edit" title="修改标题/网址/简介">✏️</button>
+    </div>
+    <div class="edit-panel">
+      <label>显示文字</label>
+      <input class="i-label">
+      <label>链接地址</label>
+      <input class="i-url">
+      <label>简介 / 备注说明</label>
+      <textarea class="i-note" placeholder="填写链接用途、备注说明"></textarea>
+      <button class="save-btn">保存</button>
+      <div class="tip-save">✅已保存</div>
+    </div>
+  </div>
+</div>
+<div class="link-item" data-id="e5">
+  <div class="item-wrap">
+    <div class="item-head">
+      <button class="expand-btn">▶</button>
+      <div class="label-text">六六大顺（个人CF网盘）</div>
+    </div>
+    <div class="url-text" data-url="https://cf.wangdong.cc.cd">https://cf.wangdong.cc.cd</div>
+    <div class="note-show-box"></div>
+    <div class="icon-bar">
+      <button class="icon-btn btn-copy" title="复制链接">📋</button>
+      <button class="icon-btn btn-edit" title="修改标题/网址/简介">✏️</button>
+    </div>
+    <div class="edit-panel">
+      <label>显示文字</label>
+      <input class="i-label">
+      <label>链接地址</label>
+      <input class="i-url">
+      <label>简介 / 备注说明</label>
+      <textarea class="i-note" placeholder="填写链接用途、备注说明"></textarea>
+      <button class="save-btn">保存</button>
+      <div class="tip-save">✅已保存</div>
+    </div>
+  </div>
+</div>
+<div class="link-item" data-id="e6">
+  <div class="item-wrap">
+    <div class="item-head">
+      <button class="expand-btn">▶</button>
+      <div class="label-text">七零八落（直播央卫视）</div>
+    </div>
+    <div class="url-text" data-url="https://cf.wangdong.cc.cd/zby.txt">https://cf.wangdong.cc.cd/zby.txt</div>
+    <div class="note-show-box"></div>
+    <div class="icon-bar">
+      <button class="icon-btn btn-copy" title="复制链接">📋</button>
+      <button class="icon-btn btn-edit" title="修改标题/网址/简介">✏️</button>
+    </div>
+    <div class="edit-panel">
+      <label>显示文字</label>
+      <input class="i-label">
+      <label>链接地址</label>
+      <input class="i-url">
+      <label>简介 / 备注说明</label>
+      <textarea class="i-note" placeholder="填写链接用途、备注说明"></textarea>
+      <button class="save-btn">保存</button>
+      <div class="tip-save">✅已保存</div>
+    </div>
+  </div>
+</div>
+<div class="link-item" data-id="e7">
+  <div class="item-wrap">
+    <div class="item-head">
+      <button class="expand-btn">▶</button>
+      <div class="label-text">八仙过海（腾讯软件下载无广告）</div>
+    </div>
+    <div class="url-text" data-url="https://soft.qq.com/">https://soft.qq.com/</div>
+    <div class="note-show-box"></div>
+    <div class="icon-bar">
+      <button class="icon-btn btn-copy" title="复制链接">📋</button>
+      <button class="icon-btn btn-edit" title="修改标题/网址/简介">✏️</button>
+    </div>
+    <div class="edit-panel">
+      <label>显示文字</label>
+      <input class="i-label">
+      <label>链接地址</label>
+      <input class="i-url">
+      <label>简介 / 备注说明</label>
+      <textarea class="i-note" placeholder="填写链接用途、备注说明"></textarea>
+      <button class="save-btn">保存</button>
+      <div class="tip-save">✅已保存</div>
+    </div>
+  </div>
+</div>
+<div class="link-item" data-id="e8">
+  <div class="item-wrap">
+    <div class="item-head">
+      <button class="expand-btn">▶</button>
+      <div class="label-text">九九归一（网络测速）</div>
+    </div>
+    <div class="url-text" data-url="https://www.speedtest.cn/">https://www.speedtest.cn/</div>
+    <div class="note-show-box"></div>
+    <div class="icon-bar">
+      <button class="icon-btn btn-copy" title="复制链接">📋</button>
+      <button class="icon-btn btn-edit" title="修改标题/网址/简介">✏️</button>
+    </div>
+    <div class="edit-panel">
+      <label>显示文字</label>
+      <input class="i-label">
+      <label>链接地址</label>
+      <input class="i-url">
+      <label>简介 / 备注说明</label>
+      <textarea class="i-note" placeholder="填写链接用途、备注说明"></textarea>
+      <button class="save-btn">保存</button>
+      <div class="tip-save">✅已保存</div>
+    </div>
+  </div>
+</div>
+<div class="link-item" data-id="e9">
+  <div class="item-wrap">
+    <div class="item-head">
+      <button class="expand-btn">▶</button>
+      <div class="label-text">十全十美（图吧工具箱查电脑配置）</div>
+    </div>
+    <div class="url-text" data-url="https://www.tbtool.cn/">https://www.tbtool.cn/</div>
+    <div class="note-show-box"></div>
+    <div class="icon-bar">
+      <button class="icon-btn btn-copy" title="复制链接">📋</button>
+      <button class="icon-btn btn-edit" title="修改标题/网址/简介">✏️</button>
+    </div>
+    <div class="edit-panel">
+      <label>显示文字</label>
+      <input class="i-label">
+      <label>链接地址</label>
+      <input class="i-url">
+      <label>简介 / 备注说明</label>
+      <textarea class="i-note" placeholder="填写链接用途、备注说明"></textarea>
+      <button class="save-btn">保存</button>
+      <div class="tip-save">✅已保存</div>
+    </div>
+  </div>
+</div>
+<div class="link-item" data-id="e10">
+  <div class="item-wrap">
+    <div class="item-head">
+      <button class="expand-btn">▶</button>
+      <div class="label-text">CF网盘每日10G（游客Public）</div>
+    </div>
+    <div class="url-text" data-url="https://wp.wangdong.cc.cd/">https://wp.wangdong.cc.cd/</div>
+    <div class="note-show-box"></div>
+    <div class="icon-bar">
+      <button class="icon-btn btn-copy" title="复制链接">📋</button>
+      <button class="icon-btn btn-edit" title="修改标题/网址/简介">✏️</button>
+    </div>
+    <div class="edit-panel">
+      <label>显示文字</label>
+      <input class="i-label">
+      <label>链接地址</label>
+      <input class="i-url">
+      <label>简介 / 备注说明</label>
+      <textarea class="i-note" placeholder="填写链接用途、备注说明"></textarea>
+      <button class="save-btn">保存</button>
+      <div class="tip-save">✅已保存</div>
+    </div>
+  </div>
+</div>
+<div class="link-item" data-id="e11">
+  <div class="item-wrap">
+    <div class="item-head">
+      <button class="expand-btn">▶</button>
+      <div class="label-text">CF网盘图片（图床）</div>
+    </div>
+    <div class="url-text" data-url="https://tupian.wangdong.cc.cd/">https://tupian.wangdong.cc.cd/</div>
+    <div class="note-show-box"></div>
+    <div class="icon-bar">
+      <button class="icon-btn btn-copy" title="复制链接">📋</button>
+      <button class="icon-btn btn-edit" title="修改标题/网址/简介">✏️</button>
+    </div>
+    <div class="edit-panel">
+      <label>显示文字</label>
+      <input class="i-label">
+      <label>链接地址</label>
+      <input class="i-url">
+      <label>简介 / 备注说明</label>
+      <textarea class="i-note" placeholder="填写链接用途、备注说明"></textarea>
+      <button class="save-btn">保存</button>
+      <div class="tip-save">✅已保存</div>
+    </div>
+  </div>
+</div>
+<div class="link-item" data-id="e12">
+  <div class="item-wrap">
+    <div class="item-head">
+      <button class="expand-btn">▶</button>
+      <div class="label-text">IT工具</div>
+    </div>
+    <div class="url-text" data-url="https://it.wangdong.cc.cd/">https://it.wangdong.cc.cd/</div>
+    <div class="note-show-box"></div>
+    <div class="icon-bar">
+      <button class="icon-btn btn-copy" title="复制链接">📋</button>
+      <button class="icon-btn btn-edit" title="修改标题/网址/简介">✏️</button>
+    </div>
+    <div class="edit-panel">
+      <label>显示文字</label>
+      <input class="i-label">
+      <label>链接地址</label>
+      <input class="i-url">
+      <label>简介 / 备注说明</label>
+      <textarea class="i-note" placeholder="填写链接用途、备注说明"></textarea>
+      <button class="save-btn">保存</button>
+      <div class="tip-save">✅已保存</div>
+    </div>
+  </div>
+</div>
+<div class="link-item" data-id="e13">
+  <div class="item-wrap">
+    <div class="item-head">
+      <button class="expand-btn">▶</button>
+      <div class="label-text">个人博客（网页）</div>
+    </div>
+    <div class="url-text" data-url="https://bk.wangdong.cc.cd/">https://bk.wangdong.cc.cd/</div>
+    <div class="note-show-box"></div>
+    <div class="icon-bar">
+      <button class="icon-btn btn-copy" title="复制链接">📋</button>
+      <button class="icon-btn btn-edit" title="修改标题/网址/简介">✏️</button>
+    </div>
+    <div class="edit-panel">
+      <label>显示文字</label>
+      <input class="i-label">
+      <label>链接地址</label>
+      <input class="i-url">
+      <label>简介 / 备注说明</label>
+      <textarea class="i-note" placeholder="填写链接用途、备注说明"></textarea>
+      <button class="save-btn">保存</button>
+      <div class="tip-save">✅已保存</div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="bottom-img">
+  <img src="https://cf.wangdong.cc.cd/2.jpg" data-big="https://cf.wangdong.cc.cd/2.jpg">
+  <img src="https://cf.wangdong.cc.cd/3.jpg" data-big="https://cf.wangdong.cc.cd/3.jpg">
+</div>
+<div class="bottom-note">微信扫码查看产品、保存付款</div>
+<div class="copyright">© 2026 智捷数码科技</div>
+</div>
+
+<div class="modal" id="imgModal">
+  <span class="modal-close">&times;</span>
+  <img class="modal-img" id="bigImg">
+</div>
+
+<button class="music-fab" id="mFab">🎵</button>
+<div class="music-ctrl" id="mCtrl">
+  <button class="ctrl-prev" id="prev">⏮</button>
+  <button class="ctrl-play" id="play">▶</button>
+  <button class="ctrl-next" id="next">⏭</button>
+  <button class="ctrl-close" id="cBtn">✕</button>
+</div>
+<div class="music-tip" id="songTip"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
